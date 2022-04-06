@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="f3f239fa-218a-48e9-8878-4743ed10aee4" activeEnvironment="Default" name="SoapCoreTests" resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="c56acd26-f4c7-4e64-8aea-190a97dee4f7" wsaVersion="NONE" name="BasicHttpBinding_IProcessPerson" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IProcessPerson" soapVersion="1_1" anonymous="optional" definition="https://localhost:44316/Process" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://localhost:44316/Process"><con:part><con:url>https://localhost:44316/Process</con:url><con:content><![CDATA[<wsdl:definitions targetNamespace="http://tempuri.org/" name="IProcessPerson" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://tempuri.org/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:http="http://schemas.microsoft.com/ws/06/2004/policy/http" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/SoapCore_Test.Model"/>
+      <xs:element name="Process">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="1" name="calculatorRequest" nillable="true" type="q1:CalculatorRequest" xmlns:q1="http://schemas.datacontract.org/2004/07/SoapCore_Test.Model"/>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="ProcessResponse">
+        <xs:complexType>
+          <xs:sequence/>
+        </xs:complexType>
+      </xs:element>
+    </xs:schema>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+      <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+      <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+      <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+      <xs:element name="byte" nillable="true" type="xs:byte"/>
+      <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+      <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+      <xs:element name="double" nillable="true" type="xs:double"/>
+      <xs:element name="float" nillable="true" type="xs:float"/>
+      <xs:element name="int" nillable="true" type="xs:int"/>
+      <xs:element name="long" nillable="true" type="xs:long"/>
+      <xs:element name="QName" nillable="true" type="xs:QName"/>
+      <xs:element name="short" nillable="true" type="xs:short"/>
+      <xs:element name="string" nillable="true" type="xs:string"/>
+      <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+      <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+      <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+      <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+      <xs:element name="char" nillable="true" type="tns:char"/>
+      <xs:simpleType name="char">
+        <xs:restriction base="xs:int"/>
+      </xs:simpleType>
+      <xs:element name="duration" nillable="true" type="tns:duration"/>
+      <xs:simpleType name="duration">
+        <xs:restriction base="xs:duration">
+          <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+          <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+          <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="guid" nillable="true" type="tns:guid"/>
+      <xs:simpleType name="guid">
+        <xs:restriction base="xs:string">
+          <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:attribute name="FactoryType" type="xs:QName"/>
+      <xs:attribute name="Id" type="xs:ID"/>
+      <xs:attribute name="Ref" type="xs:IDREF"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SoapCore_Test.Model" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/SoapCore_Test.Model" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.datacontract.org/2004/07/System"/>
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays"/>
+      <xs:complexType name="CalculatorRequest">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="Adjustment" nillable="true" type="tns:Adjust"/>
+          <xs:element nillable="true" minOccurs="0" name="DateOfBirth" type="xs:dateTime"/>
+          <xs:element nillable="true" type="tns:Gender" name="Gender"/>
+          <xs:element minOccurs="0" name="Keys" nillable="true" type="tns:AdvancedKeys"/>
+          <xs:element minOccurs="0" name="ProfileType" nillable="true" type="xs:string"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="CalculatorRequest" nillable="true" type="tns:CalculatorRequest"/>
+      <xs:complexType name="AdvancedKeys">
+        <xs:sequence>
+          <xs:element nillable="true" minOccurs="0" name="Lot" type="xs:int"/>
+          <xs:element nillable="true" minOccurs="0" name="MoneyOne" type="xs:int"/>
+          <xs:element nillable="true" minOccurs="0" name="TestMoney" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="AdvancedKeys" nillable="true" type="tns:AdvancedKeys"/>
+      <xs:complexType name="Adjust">
+        <xs:sequence>
+          <xs:element nillable="true" minOccurs="0" name="FirstID" type="xs:int"/>
+          <xs:element nillable="true" minOccurs="0" name="SecondID" type="xs:int"/>
+          <xs:element nillable="true" minOccurs="0" name="ThirdID" type="xs:int"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:element name="Adjust" nillable="true" type="tns:Adjust"/>
+      <xs:simpleType name="Gender">
+        <xs:restriction base="xs:string">
+          <xs:enumeration value="Male"/>
+          <xs:enumeration value="Female"/>
+        </xs:restriction>
+      </xs:simpleType>
+      <xs:element name="Gender" type="tns:Gender"/>
+    </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/Arrays" xmlns:ser="http://schemas.microsoft.com/2003/10/Serialization/">
+      <xs:import namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="IProcessPerson_Process_InputMessage">
+    <wsdl:part name="parameters" element="tns:Process"/>
+  </wsdl:message>
+  <wsdl:message name="IProcessPerson_Process_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ProcessResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IProcessPerson">
+    <wsdl:operation name="Process">
+      <wsdl:input wsam:Action="http://tempuri.org/IProcessPerson/Process" message="tns:IProcessPerson_Process_InputMessage"/>
+      <wsdl:output wsam:Action="http://tempuri.org/IProcessPerson/ProcessResponse" message="tns:IProcessPerson_Process_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IProcessPerson" type="tns:IProcessPerson">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Process">
+      <soap:operation soapAction="http://tempuri.org/IProcessPerson/Process" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="IProcessPerson">
+    <wsdl:port name="BasicHttpBinding_IProcessPerson" binding="tns:BasicHttpBinding_IProcessPerson">
+      <soap:address location="https://localhost:44316/Process"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://localhost:44316/Process</con:endpoint></con:endpoints><con:operation id="14c0c3c1-4d57-4753-a19b-84f36487cb88" isOneWay="false" action="http://tempuri.org/IProcessPerson/Process" name="Process" bindingOperationName="Process" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="916cb00b-ae50-47cf-9217-2133c843ea23" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://localhost:44316/Process</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/" xmlns:soap="http://schemas.datacontract.org/2004/07/SoapCore_Test.Model">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:Process>\r
+         <tem:calculatorRequest>\r
+            <!--Optional:-->\r
+            <soap:Adjustment>\r
+               <!--Optional:-->\r
+               <soap:FirstID>1</soap:FirstID>\r
+               <!--Optional:-->\r
+               <soap:SecondID>2</soap:SecondID>\r
+               <!--Optional:-->\r
+               <soap:ThirdID>3</soap:ThirdID>\r
+            </soap:Adjustment>\r
+            <!--Optional:-->\r
+            <soap:DateOfBirth>2020-01-01</soap:DateOfBirth>\r
+            <soap:Gender>Male</soap:Gender>\r
+            <!--Optional:-->\r
+            <soap:Keys>\r
+               <!--Optional:-->\r
+               <soap:Lot>10</soap:Lot>\r
+               <!--Optional:-->\r
+               <soap:MoneyOne>20</soap:MoneyOne>\r
+               <!--Optional:-->\r
+               <soap:TestMoney>20</soap:TestMoney>\r
+            </soap:Keys>\r
+            <!--Optional:-->\r
+            <soap:ProfileType>Test</soap:ProfileType>\r
+         </tem:calculatorRequest>\r
+      </tem:Process>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IProcessPerson/Process"/><con:wsrmConfig version="1.2"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/><con:sensitiveInformation/></con:soapui-project>
